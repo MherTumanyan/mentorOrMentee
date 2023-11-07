@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "fb92f472-574a-49f5-bb74-39026196a876",
+		"name": "Collection for Simply",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10772541"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testName\",\n    \"surname\": \"testSurName\",\n    \"email\": \"email@gmail.com\",\n    \"password\": \"testPass\",\n    \"type\": \"mentor\",\n    \"position\": \"Software Engineer\",\n    \"field\": \"Developer\",\n    \"shortDescription\": \"I'm a Software Engineer\",\n    \"education\": \"Bachelors degree\",\n    \"experience\": \"10+ years\",\n    \"about\": \"I love to code\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN_WRITER}}/register",
+					"host": [
+						"{{DOMAIN_WRITER}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email@gmail.com\",\n    \"password\": \"testPass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN_WRITER}}/login",
+					"host": [
+						"{{DOMAIN_WRITER}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "",
+						"description": "Token From /register or /login",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{DOMAIN_WRITER}}/profile",
+					"host": [
+						"{{DOMAIN_WRITER}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProfile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "",
+						"description": "Token From /register or /login",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"UPDATEDtestName\",\n    \"surname\": \"UPDATEDtestSurName\",\n    \"email\": \"UPDATEDemail@gmail.com\",\n    \"password\": \"UPDATEDtestPass\",\n    \"type\": \"mentor\",\n    \"position\": \"UPDATED Software Engineer\",\n    \"field\": \"Developer\",\n    \"shortDescription\": \"UPDATED I'm a Software Engineer\",\n    \"education\": \"UPDATED Bachelors degree\",\n    \"experience\": \"UPDATED 10+ years\",\n    \"about\": \"UPDATED I love to code\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN_WRITER}}/profile",
+					"host": [
+						"{{DOMAIN_WRITER}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "",
+						"description": "Token From /register or /login",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testName\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN_WRITER}}/getUsers",
+					"host": [
+						"{{DOMAIN_WRITER}}"
+					],
+					"path": [
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "DOMAIN_WRITER",
+			"value": "localhost:3000"
+		}
+	]
+}
