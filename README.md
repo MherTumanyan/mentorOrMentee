@@ -47,7 +47,9 @@ Create a PostgreSQL database according to the configuration.
 4. Start the application:
 
     ```shell
-    npm start
+    npm run start 
+        or
+    yarn start
 
 5. Docker
 docker compose up --build -d
